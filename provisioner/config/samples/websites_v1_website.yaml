@@ -1,0 +1,26 @@
+apiVersion: websites.cloudself.dev/v1
+kind: Website
+metadata:
+  labels:
+    app.kubernetes.io/name: provisioner
+    app.kubernetes.io/managed-by: kustomize
+  name: website-sample
+spec:
+  websiteName: test-site
+  htmlContent: |
+    <html>
+      <head>
+        <title>Integration Test Site</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 40px; }
+          h1 { color: #2563eb; }
+        </style>
+      </head>
+      <body>
+        <h1>Hello from CloudSelf!</h1>
+        <p>This is an integration test for the provisioner.</p>
+        <p>If you can see this, the provisioner is working correctly! 🎉</p>
+      </body>
+    </html>
+  backendId: 1
+  userId: "integration-test"
